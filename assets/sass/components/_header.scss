@@ -1,0 +1,38 @@
+header {
+    border-bottom: 1px solid $primary-gray;
+}
+
+.header {
+    padding: 23px 24px;
+
+    &__logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 13px;
+        max-width: 213px;
+        width: 100%;   
+        &-title {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        padding: 17px 18px;
+        &__logo {
+            max-width: 219px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 11px 12px;
+        &__logo {
+            max-width: 225px;
+        }
+    }
+}

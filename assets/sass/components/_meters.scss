@@ -1,0 +1,82 @@
+.meters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    &__zone {
+        position: relative;
+        width: 50%;
+        @include padding(33px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+        &--over-bottom {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                border-bottom: 1px dashed $secondary-blue;
+            }
+        }
+        &--over-right {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                border-right: 1px dashed $secondary-blue;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .meters {
+        flex: 1 0 auto;
+        height: auto;
+        &__zone {
+            width: 100%;
+            padding: 15px 25px;
+            box-sizing: border-box;
+
+            &--over-bottom {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    bottom: 0;
+                    right: 0;
+                    border-bottom: 1px dashed $secondary-blue;
+                }
+            }
+            &--over-right {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    bottom: 0;
+                    right: 0;
+                    border-right: unset;
+                    border-bottom: 1px dashed $secondary-blue;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .meters {
+        &__zone {
+            width: 100%;
+        }
+    }
+}
